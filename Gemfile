@@ -12,7 +12,6 @@ gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'wirble'
