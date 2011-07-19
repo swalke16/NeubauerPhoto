@@ -1,18 +1,22 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc4'
+gem 'jquery-rails'
 gem 'haml'
 gem 'sqlite3'
+gem 'heroku'
+gem 'therubyracer'
 
 # Asset template engines
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 
-gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'wirble'
+  gem 'awesome_print'
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
