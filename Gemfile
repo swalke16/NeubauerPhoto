@@ -23,3 +23,7 @@ group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'activerecord-postgresql-adapter'
+end
