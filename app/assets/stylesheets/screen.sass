@@ -1,0 +1,23 @@
+@import compass
+@import compass/reset
+@import compass/layout
+@import compass/typography/vertical_rhythm
+
+// establish base vertical rhythm
+$base_font_size: 16px
+$base_line_height: 24px
+@include establish-baseline
+
+@include sticky-footer(36px, "#container", "#container_footer", "#footer")
+
+#footer
+  @include adjust-font-size-to(14px)
+  background: #0a0a0a
+  text-align: center
+
+  a
+    @include link-colors(#555, #FFF)
+
+    img
+      vertical-align: middle
+      padding-right: 0.5em

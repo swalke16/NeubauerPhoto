@@ -3,7 +3,12 @@
   %head
     %title Erin Neubauer Photography
     = stylesheet_link_tag "application"
+
     = javascript_include_tag "application"
 
   %body
-    = yield
+    #container
+      = yield
+      #container_footer
+    #footer
+      = render :partial => "shared/footer"

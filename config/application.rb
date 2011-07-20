@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
- require "active_record/railtie"
+require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
@@ -43,5 +43,8 @@ module NeubauerPhoto
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    # Use sass for generated files
+    config.generators.stylesheet_engine = :sass
   end
 end

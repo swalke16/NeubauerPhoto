@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
+gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
 gem 'jquery-rails'
 gem 'haml'
 gem 'sqlite3'
 gem 'heroku'
 gem 'therubyracer'
 
-gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
+gem 'sass-rails'#, :git => 'https://github.com/rails/sass-rails.git'
 gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
 
 
