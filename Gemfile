@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => '3-1-stable'
 gem 'jquery-rails'
 gem 'haml'
-gem 'sqlite3'
 gem 'heroku'
 gem 'therubyracer'
 
@@ -17,6 +16,7 @@ gem 'coffee-script'
 gem 'uglifier'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'wirble'
   gem 'awesome_print'
