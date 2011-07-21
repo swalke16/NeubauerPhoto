@@ -1,0 +1,26 @@
+%ul#gallery_types
+  - @photosets.each do |p|
+    %li
+      = link_to p.title, p.id
+
+#gallery
+
+:javascript
+
+  $("a").click(function(e){
+    var flickr = new Galleria.Flickr();
+    flickr.set($(this).attr('href'), function(data){
+      Galleria.get(0).load(data);
+    });
+
+    e.preventDefault();
+  });
+
+  // Initialize Galleria
+    $('#gallery').galleria({
+          lightbox: true,
+          flickr: 'user:eneubauer',
+          flickrOptions: {
+                          sort: 'interestingness-desc'
+                          }
+          });

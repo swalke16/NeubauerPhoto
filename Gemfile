@@ -5,6 +5,8 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'heroku'
 gem 'therubyracer'
+gem 'flickr', :git => 'https://github.com/ProtectedMethod/flickr.git'
+gem 'xml-simple'
 
 gem 'sass-rails'#, :git => 'https://github.com/rails/sass-rails.git'
 gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
