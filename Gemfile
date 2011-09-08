@@ -8,12 +8,11 @@ gem 'therubyracer'
 gem 'flickr', :git => 'https://github.com/ProtectedMethod/flickr.git'
 gem 'xml-simple'
 
-gem 'sass-rails'#, :git => 'https://github.com/rails/sass-rails.git'
+gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git', :branch => '3-1-stable'
 gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
 
 
 # Asset template engines
-#gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 

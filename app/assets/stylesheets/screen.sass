@@ -3,12 +3,86 @@
 @import compass/layout
 @import compass/typography/vertical_rhythm
 
-// establish base vertical rhythm
+@font-face
+  font-family: 'NobileRegular'
+  src: url('/assets/nobile-webfont.eot')
+  src: url('/assets/nobile-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/nobile-webfont.woff') format("woff"), url('/assets/nobile-webfont.ttf') format("truetype"), url('/assets/nobile-webfont.svg#NobileRegular') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'NobileItalic'
+  src: url('/assets/nobile_italic-webfont.eot')
+  src: url('/assets/nobile_italic-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/nobile_italic-webfont.woff') format("woff"), url('/assets/nobile_italic-webfont.ttf') format("truetype"), url('/assets/nobile_italic-webfont.svg#NobileItalic') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'NobileBold'
+  src: url('/assets/nobile_bold-webfont.eot')
+  src: url('/assets/nobile_bold-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/nobile_bold-webfont.woff') format("woff"), url('/assets/nobile_bold-webfont.ttf') format("truetype"), url('/assets/nobile_bold-webfont.svg#NobileBold') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'NobileBoldItalic'
+  src: url('/assets/nobile_bold_italic-webfont.eot')
+  src: url('/assets/nobile_bold_italic-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/nobile_bold_italic-webfont.woff') format("woff"), url('/assets/nobile_bold_italic-webfont.ttf') format("truetype"), url('/assets/nobile_bold_italic-webfont.svg#NobileBoldItalic') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'ITCOfficinaSerifStdBook'
+  src: url('/assets/officinaserifstd-book-webfont.eot')
+  src: url('/assets/officinaserifstd-book-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/officinaserifstd-book-webfont.woff') format("woff"), url('/assets/officinaserifstd-book-webfont.ttf') format("truetype"), url('/assets/officinaserifstd-book-webfont.svg#ITCOfficinaSerifStdBook') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'ITCOfficinaSerifStdBookItalic'
+  src: url('/assets/officinaserifstd-bookitalic-webfont.eot')
+  src: url('/assets/officinaserifstd-bookitalic-webfont.eot?#iefix') format("embedded-opentype"), url('/assets/officinaserifstd-bookitalic-webfont.woff') format("woff"), url('/assets/officinaserifstd-bookitalic-webfont.ttf') format("truetype"), url('/assets/officinaserifstd-bookitalic-webfont.svg#ITCOfficinaSerifStdBookItalic') format("svg")
+  font-weight: normal
+  font-style: normal
+
+// establish bas' vertical rhythm
 $base_font_size: 16px
 $base_line_height: 24px
 @include establish-baseline
 
 @include sticky-footer(36px, "#container", "#container_footer", "#footer")
+
+body
+  color: #7CB2BF
+  background-color: #E9E9E7
+  font-family: 'NobileRegular', Arial, sans-serif
+
+h1, h2
+  font-family:  'ITCOfficinaSerifStdBook', Arial, sans-serif
+  text-align:   center
+
+  strong
+    font-family: 'ITCOfficinaSerifStdBookItalic', Arial, sans-serif
+
+h1
+  @include adjust-font-size-to(28px)
+
+.banner
+  @include adjust-font-size-to(18px)
+  background: url('/assets/erinbanner1.png') no-repeat center center
+  padding:    18px 0px 10px 0px
+  margin-top: 75px
+  margin-bottom: 40px
+
+#container
+  width: 600px
+  margin-left: auto
+  margin-right: auto
 
 #footer
   @include adjust-font-size-to(14px)
