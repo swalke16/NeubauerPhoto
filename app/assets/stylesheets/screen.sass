@@ -70,7 +70,18 @@ h1, h2
     font-family: 'ITCOfficinaSerifStdBookItalic', Arial, sans-serif
 
 h1
-  @include adjust-font-size-to(28px)
+  @include adjust-font-size-to(32px)
+
+  &.first
+    margin-bottom: 15px
+
+a
+  text-decoration: none
+  color: #939598
+
+  &:hover
+    color: #545556
+
 
 .banner
   @include adjust-font-size-to(18px)
@@ -78,6 +89,23 @@ h1
   padding:    18px 0px 10px 0px
   margin-top: 75px
   margin-bottom: 40px
+
+#horizontal_nav
+  margin-top: 35px
+  text-align: center
+  @include adjust-font-size-to(12px)
+
+  li
+    display: inline
+
+    &:after
+      content: '●'
+      color: #fff
+      padding: 0px 6px
+      @include adjust-font-size-to(10px)
+
+    &:last-child:after
+      content: ''
 
 #container
   width: 600px
