@@ -1,16 +1,17 @@
-%h2.banner
-  Erin Neubauer
-  %strong Photography
+.center-align
+  %h2.banner-horizontal
+    Erin Neubauer
+    %strong Photography
 
-%h1.first Hello and nice to meet you!
-%h1 I'm Erin Neubauer,
-%h1 a freelance photographer.
+  %h1.first Hello and nice to meet you!
+  %h1 I'm Erin Neubauer,
+  %h1 a freelance photographer.
 
-%ul#horizontal_nav
-  - @photosets.each do |p|
-    %li
-      = link_to p.title.upcase, p.id
+  %ul#horizontal_nav
+    - @photosets.each do |p|
+      %li
+        = link_to p.title.upcase, p.id
 
-  %li= link_to "ABOUT", about_path
-  %li= link_to "CONTACT", contact_path
+    %li= link_to "ABOUT", about_path
+    %li= link_to "CONTACT", contact_path
 

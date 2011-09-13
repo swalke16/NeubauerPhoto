@@ -55,8 +55,6 @@ $base_font_size: 16px
 $base_line_height: 24px
 @include establish-baseline
 
-@include sticky-footer(36px, "#container", "#container_footer", "#footer")
-
 body
   color: #7CB2BF
   background-color: #E9E9E7
@@ -83,12 +81,34 @@ a
     color: #545556
 
 
-.banner
+.banner-horizontal
   @include adjust-font-size-to(18px)
   background: url('/assets/erinbanner1.png') no-repeat center center
   padding:    18px 0px 10px 0px
   margin-top: 75px
   margin-bottom: 40px
+
+.banner-vertical
+  @include adjust-font-size-to(18px)
+  background: url('/assets/erinbanner2.png') no-repeat center center
+  position: relative
+  height: 100px
+  width: 250px
+
+  h2
+    position: absolute
+
+    &.first
+      top: 19px
+      left: 40px
+
+    &.last
+      position: absolute
+      top: 55px
+      left: 50px
+
+.banner-bottom
+  @include adjust-font-size-to(18px)
 
 #horizontal_nav
   margin-top: 35px
@@ -107,23 +127,33 @@ a
     &:last-child:after
       content: ''
 
-#container
+#vertical_nav
+  margin-left: 50px
+  @include adjust-font-size-to(10px)
+
+  li
+    display: block
+
+.center-align
   width: 600px
   margin-left: auto
   margin-right: auto
 
-#footer
-  @include adjust-font-size-to(14px)
-  background: #0a0a0a
-  text-align: center
+#sidebar
+  padding: 20px 0px 0px 10px
+  width: 250px
+  float: left
 
-  a
-    @include link-colors(#555, #FFF)
-
-    img
-      vertical-align: middle
-      padding-right: 0.5em
+#gallery_wrapper
+  float: left
+  width: 660px
+  height: 480px
+  padding: 15px
+  background-color: #fff
+  margin-top: 95px
+  margin-left: -30px
+  @include box-shadow(#D7D7D5, 2px 2px 2px)
 
 #gallery
-  width: 500px
-  height: 500px
+  width: 630px
+  height: 420px

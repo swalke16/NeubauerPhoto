@@ -1,9 +1,19 @@
-%ul#gallery_types
-  - @photosets.each do |p|
-    %li
-      = link_to p.title, p.id
+#sidebar
+  .banner-vertical
+    %h2.first Erin Neubauer
+    %h2.last
+      %strong Photography
 
-#gallery
+  %ul#vertical_nav
+    - @photosets.each do |p|
+      %li
+        = link_to p.title.upcase, p.id
+
+    %li= link_to "ABOUT", about_path
+    %li= link_to "CONTACT", contact_path
+
+#gallery_wrapper
+  #gallery
 
 :javascript
 
