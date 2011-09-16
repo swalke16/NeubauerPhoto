@@ -10,7 +10,7 @@
   %ul#horizontal_nav
     - @photosets.each do |p|
       %li
-        = link_to p.title.upcase, p.id
+        = link_to p.title.upcase, gallery_path(:id => p.id)
 
     %li= link_to "ABOUT", about_path
     %li= link_to "CONTACT", contact_path

@@ -17,20 +17,29 @@
 
 :javascript
 
-  $("a").click(function(e){
-    var flickr = new Galleria.Flickr();
-    flickr.set($(this).attr('href'), function(data){
-      Galleria.get(0).load(data);
+  $(function(){
+    $("a").click(function(e){
+      e.preventDefault();
+      loadGallery( $(this).attr('href') );
     });
 
-    e.preventDefault();
+    // Initialize Galleria
+    $('#gallery').galleria({
+      lightbox: true
+    });
+
+    loadGallery('#{params[:id]}');
+
+    function loadGallery(setId){
+      var setGallery = function(data) { Galleria.get(0).load(data); };
+      var flickr = new Galleria.Flickr();
+      flickr.setOptions({sort: 'interestingness-desc'});
+
+      if (setId && setId.length > 0)
+        flickr.set(setId, setGallery)
+      else
+        flickr.user('eneubauer', setGallery)
+    }
+
   });
 
-  // Initialize Galleria
-    $('#gallery').galleria({
-          lightbox: true,
-          flickr: 'user:eneubauer',
-          flickrOptions: {
-                          sort: 'interestingness-desc'
-                          }
-          });
