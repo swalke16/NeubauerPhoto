@@ -1,13 +1,16 @@
 #sidebar
   .banner-vertical
-    %h2.first Erin Neubauer
+    %h2.first
+      =link_to "Erin Neubauer", home_path
+
     %h2.last
-      %strong Photography
+      %strong
+        =link_to "Photography", home_path
 
   %ul#vertical_nav
     - @photosets.each do |p|
       %li
-        = link_to p.title.upcase, p.id
+        = link_to p.title.upcase, p.id, :class => 'photoset-link'
 
     %li= link_to "ABOUT", about_path
     %li= link_to "CONTACT", contact_path
@@ -18,7 +21,7 @@
 :javascript
 
   $(function(){
-    $("a").click(function(e){
+    $("a.photoset-link").click(function(e){
       e.preventDefault();
       loadGallery( $(this).attr('href') );
     });
