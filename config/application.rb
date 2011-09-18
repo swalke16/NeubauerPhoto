@@ -46,5 +46,6 @@ module NeubauerPhoto
 
     # Use sass for generated files
     config.generators.stylesheet_engine = :sass
+
   end
 end
