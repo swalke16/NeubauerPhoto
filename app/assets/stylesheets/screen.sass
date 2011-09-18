@@ -148,7 +148,7 @@ a
   width: 250px
   float: left
 
-#gallery_wrapper
+#gallery_wrapper, #about, #contact
   float: left
   width: 730px
   height: 520px
@@ -186,3 +186,12 @@ a
 #gallery
   width: 760px
   height: 550px
+
+#about, #contact
+  @include adjust-font-size-to(12px)
+  min-height: 520px
+  height: auto
+
+  p
+    padding: 10px
+

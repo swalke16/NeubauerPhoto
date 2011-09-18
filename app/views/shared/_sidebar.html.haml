@@ -1,0 +1,20 @@
+#sidebar
+  .banner-vertical
+    %h2.first
+      =link_to "Erin Neubauer", home_path
+
+    %h2.last
+      %strong
+        =link_to "Photography", home_path
+
+  %ul#vertical_nav
+    - @photosets.each do |p|
+      %li
+        -if gallery
+          = link_to p.title.upcase, p.id, :class => 'photoset-link'
+
+        -else
+          = link_to p.title.upcase, gallery_path(:id => p.id)
+
+    %li= link_to "ABOUT", about_path
+    %li= link_to "CONTACT", contact_path
