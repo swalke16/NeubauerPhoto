@@ -78,7 +78,7 @@ a
   color: #939598
 
   &:hover
-    color: #7CB2BF
+    color: #545556
 
 .banner-horizontal, .banner-vertical
   a
@@ -150,14 +150,39 @@ a
 
 #gallery_wrapper
   float: left
-  width: 630px
-  height: 420px
-  padding: 45px 15px 15px 15px
+  width: 730px
+  height: 520px
+  padding: 15px
   background-color: #fff
   margin-top: 95px
   margin-left: -30px
   @include box-shadow(#D7D7D5 4px 4px 4px, #D7D7D5 -4px -4px 4px)
 
+#gallery_info
+  position: relative
+  height: 30px
+  @include adjust-font-size-to(10px)
+
+  .gallery-name
+    position: absolute
+    left: 10px
+
+  .photo-count
+    position: absolute
+    left: 350px
+
+  .photo-nav
+    cursor: pointer
+    position: absolute
+    right: 10px
+
+    a
+      text-decoration: none
+      color: #7CB2BF
+
+      &:hover
+        color: #545556
+
 #gallery
-  width: 630px
-  height: 420px
+  width: 760px
+  height: 550px

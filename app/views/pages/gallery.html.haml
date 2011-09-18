@@ -16,25 +16,63 @@
     %li= link_to "CONTACT", contact_path
 
 #gallery_wrapper
+  #gallery_info
+    %span.gallery-name
+      KIDS
+    %span.photo-count
+      1 of 4
+    %span.photo-nav
+      %a.prev ◀
+      &nbsp;
+      %a.next ▶
+
   #gallery
 
 :javascript
 
   $(function(){
-    $("a.photoset-link").click(function(e){
-      e.preventDefault();
-      loadGallery( $(this).attr('href') );
-    });
 
     // Initialize Galleria
     $('#gallery').galleria({
-      lightbox: true
+      lightbox: true,
+      showInfo: false,
+      showImagenav: false,
+      thumbnails: false,
+      showCounter: false
     });
 
-    loadGallery('#{params[:id]}');
+    $("a.photoset-link").click(function(e){
+      e.preventDefault();
+      loadGallery( $(this).attr('href'), $(this).text() );
+    });
 
-    function loadGallery(setId){
-      var setGallery = function(data) { Galleria.get(0).load(data); };
+    $("a.next").click(function(e){
+      e.preventDefault();
+      var gallery = Galleria.get(0);
+      gallery.next();
+    });
+
+    $("a.prev").click(function(e){
+      e.preventDefault();
+      var gallery = Galleria.get(0);
+      gallery.prev();
+    });
+
+    Galleria.get(0).bind("image", function(e){
+      var left = $(e.imageTarget).css("left").replace('px', '');
+      left = left - ( Math.min(left, 15)) + "px";
+
+      $(e.imageTarget).css("left", left);
+
+      var gallery = Galleria.get(0);
+      $('.photo-count').text((gallery.getIndex() + 1) + " of " + gallery.getDataLength() )
+    });
+
+    var initialGalleryId = '#{params[:id]}' || $("a.photoset-link:first").attr("href");
+    $("a.photoset-link[href='" + initialGalleryId + "']").click();
+
+    function loadGallery(setId, setName){
+      var setGallery = function(data) { updateGallery(data, setName); };
       var flickr = new Galleria.Flickr();
       flickr.setOptions({sort: 'interestingness-desc'});
 
@@ -42,6 +80,12 @@
         flickr.set(setId, setGallery)
       else
         flickr.user('eneubauer', setGallery)
+    }
+
+    function updateGallery(data, setName){
+      var gallery = Galleria.get(0);
+      gallery.load(data)
+      $('.gallery-name').text(setName.toLowerCase().capitalize())
     }
 
   });
